@@ -1,9 +1,6 @@
 Rails.application.routes.draw do
-  #get 'positions/index'
-  #get 'positions/download'
-
+  devise_for :users
   get 'pages/home'
-#  resources :reports
 
   get 'reports/index_download'
 
