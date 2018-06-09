@@ -1,6 +1,19 @@
 <h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
 
-<p><%= link_to 'Portfolios', portfolios_path %></p>
-<p><%= link_to 'Reports', reports_path %></p>
-<p><%= link_to 'Positions', reports_index_download_path %></p>
+
+
+
+<div class="sidebar-nav">
+  <div class="well" style="width:300px; padding: 8px 0;">
+    <ul class="nav nav-list"> 
+      <li class="nav-header">#</li>        
+
+      <li><%= link_to 'Portfolios', portfolios_path %></li>
+      <li><%= link_to 'Reports', reports_path %></li>
+      <li><%= link_to 'Positions', reports_index_download_path %></li>
+
+    </ul>
+  </div>
+</div>
+
+

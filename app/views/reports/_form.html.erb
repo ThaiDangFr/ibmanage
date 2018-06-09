@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :name %>
-    <%= form.text_field :name %>
+
+  <div class="form-group">
+    <%= form.label :name , :class => "col-md-4 control-label" %>
+    <%= form.text_field :name , :class => "form-control input-md" %>
   </div>
 
-  <div class="field">
-    <%= form.label :code %>
-    <%= form.text_field :code %>
+  <div class="form-group">
+    <%= form.label :code , :class => "col-md-4 control-label" %>
+    <%= form.text_field :code , :class => "form-control input-md" %>
   </div>
 
-  <div class="field">
-    <%= form.label :portfolio_id %>
-    <%= form.collection_select :portfolio_id, Portfolio.all, :id, :name %>
+  <div class="form-group">
+    <%= form.label :portfolio_id, :class => "col-md-4 control-label" %>
+    <%= form.collection_select :portfolio_id, Portfolio.all, :id, :name, {}, { :class => "form-control input-md" } %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+
+  <div class="action">
+    <%= form.submit class: 'btn btn-info' %>
   </div>
+
 <% end %>

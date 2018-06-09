@@ -1,6 +1,16 @@
-<h1>Editing Portfolio</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <legend>Edit portfolio</legend>
+    </div>
+  </div>
 
-<%= render 'form', portfolio: @portfolio %>
+<%= render 'form', portfolio: @portfolio %> 
 
-<%= link_to 'Show', @portfolio %> |
-<%= link_to 'Back', portfolios_path %>
+<br>
+<%= link_to 'Back' , portfolios_path,  :class => "btn btn-info", :role => "button" %>
+
+</div>
+
+
+

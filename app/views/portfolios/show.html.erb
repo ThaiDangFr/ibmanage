@@ -1,14 +1,16 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <legend>Show portfolio</legend>
+    </div>
+  </div>
 
-<p>
-  <strong>Name:</strong>
-  <%= @portfolio.name %>
-</p>
+<p><label class="col-md-4">Name:</label> <%= @portfolio.name %></p>
+<p><label class="col-md-4">Token:</label> <%= @portfolio.token %></p>
 
-<p>
-  <strong>Token:</strong>
-  <%= @portfolio.token %>
-</p>
 
-<%= link_to 'Edit', edit_portfolio_path(@portfolio) %> |
-<%= link_to 'Back', portfolios_path %>
+  <br>
+  <%= link_to 'Edit', edit_portfolio_path(@portfolio) ,  :class => "btn btn-info", :role => "button" %>
+  <%= link_to 'Back' , portfolios_path,  :class => "btn btn-info", :role => "button" %>
+
+</div>

@@ -1,6 +1,12 @@
-<h1>Editing Report</h1>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <legend>Edit report</legend>
+    </div>
+  </div>
+
 
 <%= render 'form', report: @report %>
 
-<%= link_to 'Show', @report %> |
-<%= link_to 'Back', reports_path %>
+<br>
+<%= link_to 'Back', reports_path,  :class => "btn btn-info", :role => "button" %>

@@ -1,15 +1,21 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <legend>Download logs</legend>
+    </div>
+  </div>
 
-<h1>Positions#download</h1>
 
+<pre>
+<%= @fws.logs.join("\n") %>
+</pre>
 
-<p>Logs</p>
-<% @fws.logs.each do |l| %>
-
-<p><%= l %></p>
-
-<% end %>
 
 <br>
 
-<p><%= link_to 'Retour' , root_path %></p>
+<p><%= link_to 'Back' , reports_index_download_path, :class => "btn btn-info", :role => "button" %></p>
+
+
+
+
+</div>
