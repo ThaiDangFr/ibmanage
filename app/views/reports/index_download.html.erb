@@ -1,6 +1,9 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Reports</h1>
+<h1>Positions#index</h1>
+<p>Find me in app/views/positions/index.html.erb</p>
+
+
 
 <table>
   <thead>
@@ -18,9 +21,7 @@
         <td><%= report.name %></td>
         <td><%= report.code %></td>
         <td><%= report.portfolio.name %></td>
-        <td><%= link_to 'Show', report %></td>
-        <td><%= link_to 'Edit', edit_report_path(report) %></td>
-        <td><%= link_to 'Destroy', report, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	<td><%= link_to 'Download', download_report_path(report) %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,5 +29,4 @@
 
 <br>
 
-<p><%= link_to 'New Report', new_report_path %></p>
 <p><%= link_to 'Retour' , pages_home_path %></p>

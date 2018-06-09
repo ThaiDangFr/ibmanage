@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Positions#download</h1>
+
+
+<p>Logs</p>
+<% @fws.logs.each do |l| %>
+
+<p><%= l %></p>
+
+<% end %>
+
+<br>
+
+<p><%= link_to 'Retour' , pages_home_path %></p>

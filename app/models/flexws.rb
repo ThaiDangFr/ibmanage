@@ -51,7 +51,7 @@ class Flexws
       end
     end
 
-    return result
+    return result.join("\n")
   end
   
 

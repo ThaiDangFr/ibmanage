@@ -1,6 +1,37 @@
 class ReportsController < ApplicationController
   before_action :set_report, only: [:show, :edit, :update, :destroy]
 
+
+  def index_download
+    @reports = Report.all
+  end
+
+  def download
+    begin
+    puts "download"
+    r = Report.find(params[:id])
+
+    puts r.name
+
+    name = "#{r.portfolio.name}_#{r.name}.csv"
+    report_id = r.code
+    token = r.portfolio.token
+    
+    @fws = Flexws.new
+    str = @fws.fetchAndConvertPositions(token, report_id)
+
+    send_data str, filename: name, type: "application/csv"
+    
+    #puts fws.logs
+    
+    rescue => e
+      puts e.message
+      puts @fws.logs
+    end
+
+  end
+
+
   # GET /reports
   # GET /reports.json
   def index
