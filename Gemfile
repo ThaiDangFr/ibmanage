@@ -66,3 +66,9 @@ gem 'nokogiri', '~> 1.8', '>= 1.8.2'
 gem 'devise', '~> 4.4', '>= 4.4.3'
 
 gem 'bootstrap-sass', '~> 3.3', '>= 3.3.7'
+
+group :development do
+  gem 'rails_layout'
+end
+
+gem 'jquery-rails', '~> 4.3', '>= 4.3.3'

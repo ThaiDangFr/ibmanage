@@ -8,7 +8,7 @@ class ReportsController < ApplicationController
 
   def download
     begin
-    puts "download"
+    #puts "download"
     r = Report.find(params[:id])
 
     puts r.name
@@ -102,4 +102,5 @@ class ReportsController < ApplicationController
     def report_params
       params.require(:report).permit(:name, :code, :portfolio_id)
     end
+
 end
