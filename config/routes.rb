@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :reports do
     member do
       get 'download'
+      get 'update_positions'
     end
   end
 

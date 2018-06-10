@@ -6,30 +6,37 @@ class ReportsController < ApplicationController
     @reports = Report.all
   end
 
-  def download
+
+  def update_positions
     begin
-    #puts "download"
-    r = Report.find(params[:id])
+      r = Report.find(params[:id])
 
-    puts r.name
+      report_id = r.code
+      token = r.portfolio.token
+      portfolio_id = r.portfolio.id
 
-    name = "#{r.portfolio.name}_#{r.name}.csv"
-    report_id = r.code
-    token = r.portfolio.token
-    
-    @fws = Flexws.new
-    str = @fws.fetchAndConvertPositions(token, report_id)
+      @fws = Flexws.new
+      @fws.fetchAndUpdateDB(token, report_id, portfolio_id)
 
-    send_data str, filename: name, type: "application/csv"
-    
-    #puts fws.logs
-    
     rescue => e
       puts e.message
       puts @fws.logs
     end
-
   end
+
+
+  def download
+    r = Report.find(params[:id])
+
+    name = "#{r.portfolio.name}_#{r.name}.csv"
+    portfolio_id = r.portfolio.id
+    
+    @fws = Flexws.new
+    str = @fws.toYahooFormat(portfolio_id)
+
+    send_data str, filename: name, type: "application/csv"
+  end
+
 
 
   # GET /reports
