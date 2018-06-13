@@ -33,9 +33,25 @@
 	</tbody>
       </table>
 
-
     </div>
   </div>
+
+
+  <div>
+    <legend>P123 import</legend>
+    <% @portfolios.each do |portfolio| %>
+  
+    <p><b><%= portfolio.name %></b></p>
+    <pre>
+      <% Position.where(:portfolio_id => portfolio.id).each do |p| %> 
+<%= "#{p.created_at.strftime('%m/%d/%Y')}\t#{p.ticker}\tBUY\t#{p.quantity}\t#{p.cost}\t0" %>
+      <% end %>
+    </pre>  
+
+    <% end %>
+  </div>
+
+
 
   <%= link_to 'Back' , root_path,  :class => "btn btn-info", :role => "button" %>
 </div>

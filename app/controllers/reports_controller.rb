@@ -4,6 +4,7 @@ class ReportsController < ApplicationController
 
   def index_download
     @reports = Report.all
+    @portfolios = Portfolio.all
   end
 
 
